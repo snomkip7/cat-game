@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://coleihlj8gufk"]
+
+[ext_resource type="Script" path="res://Player.cs" id="1_lohen"]
+[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_tidpi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4jk2"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 15
+script = ExtResource("1_lohen")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w4jk2")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tidpi")
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="MoveRay" type="RayCast2D" parent="."]
+collision_mask = 6
+collide_with_areas = true

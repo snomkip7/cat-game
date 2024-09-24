@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw240jg1ulcpm"]
+
+[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_x4kus"]
+[ext_resource type="PackedScene" uid="uid://coleihlj8gufk" path="res://Player.tscn" id="2_ava85"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laqn7"]
+size = Vector2(128, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wupkt"]
+resource_name = "e"
+texture = ExtResource("1_x4kus")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_v1an5"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_wupkt")
+
+[node name="Entrance" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(15, 8.4375)
+texture = ExtResource("1_x4kus")
+
+[node name="Player" parent="." instance=ExtResource("2_ava85")]
+position = Vector2(1056, 672)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(640, 640)
+collision_layer = 2
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_laqn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_x4kus")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_v1an5")
+format = 2
+layer_0/tile_data = PackedInt32Array(131094, 0, 1, 131093, 0, 1, 131092, 0, 1, 131091, 0, 1, 131090, 0, 1, 131089, 0, 1, 131088, 0, 1, 131087, 0, 1, 131086, 0, 1, 131085, 0, 1, 131084, 0, 1, 131083, 0, 1, 131082, 0, 1, 131081, 0, 1, 131080, 0, 1, 131079, 0, 1, 131078, 0, 1, 196614, 0, 1, 196613, 0, 1, 196612, 0, 1, 262148, 0, 1, 327684, 0, 1, 393220, 0, 1, 458756, 0, 1, 524292, 0, 1, 589828, 0, 1, 655364, 0, 1, 720900, 0, 1, 786436, 0, 1, 786437, 0, 1, 851973, 0, 1, 851975, 0, 1, 851976, 0, 1, 851977, 0, 1, 851978, 0, 1, 851979, 0, 1, 851980, 0, 1, 851981, 0, 1, 851982, 0, 1, 851983, 0, 1, 851984, 0, 1, 851985, 0, 1, 851986, 0, 1, 851987, 0, 1, 851988, 0, 1, 851989, 0, 1, 851990, 0, 1, 786454, 0, 1, 786455, 0, 1, 720920, 0, 1, 655384, 0, 1, 589848, 0, 1, 524312, 0, 1, 458776, 0, 1, 393240, 0, 1, 393239, 0, 1, 327703, 0, 1, 262167, 0, 1, 262166, 0, 1, 262165, 0, 1, 262164, 0, 1, 262163, 0, 1, 327699, 0, 1, 393235, 0, 1, 393236, 0, 1, 458772, 0, 1, 458773, 0, 1, 524309, 0, 1, 524310, 0, 1, 589846, 0, 1, 655382, 0, 1, 655381, 0, 1, 589845, 0, 1, 589844, 0, 1, 589843, 0, 1, 589842, 0, 1, 589841, 0, 1, 524304, 0, 1, 458768, 0, 1, 458767, 0, 1, 393231, 0, 1, 393230, 0, 1, 393229, 0, 1, 327693, 0, 1, 327692, 0, 1, 327691, 0, 1, 327690, 0, 1, 327689, 0, 1, 327688, 0, 1, 327687, 0, 1, 393223, 0, 1, 393222, 0, 1, 458758, 0, 1, 524294, 0, 1, 589830, 0, 1, 655366, 0, 1, 655367, 0, 1, 720903, 0, 1, 720904, 0, 1, 720905, 0, 1, 720906, 0, 1, 720907, 0, 1, 720910, 0, 1, 786448, 0, 1, 851974, 0, 1, 524300, 0, 1)
