@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8dcfarvbdiwk"]
+
+[ext_resource type="PackedScene" uid="uid://xfoft6j5e5y5" path="res://HintStuff/Piece.tscn" id="1_gbl17"]
+
+[node name="Heart" type="Node2D"]
+
+[node name="Piece1" parent="." instance=ExtResource("1_gbl17")]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://xfoft6j5e5y5"]
+
+[ext_resource type="Script" path="res://HintStuff/Piece.cs" id="1_ivmtk"]
+[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_shbe2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l2k1"]
+size = Vector2(64, 64)
+
+[node name="Piece" type="Node2D"]
+script = ExtResource("1_ivmtk")
+
+[node name="PieceSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_shbe2")
+
+[node name="PieceArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PieceArea"]
+shape = SubResource("RectangleShape2D_3l2k1")
+
+[connection signal="input_event" from="PieceArea" to="." method="inputEvent"]

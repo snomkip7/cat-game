@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://f88wmwydq8o8"]
+
+[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_rhmcw"]
+[ext_resource type="PackedScene" uid="uid://8dcfarvbdiwk" path="res://HintStuff/Heart.tscn" id="2_iydyo"]
+
+[node name="Hint" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+rotation = 3.14159
+scale = Vector2(15, 8.4375)
+texture = ExtResource("1_rhmcw")
+
+[node name="Heart" parent="." instance=ExtResource("2_iydyo")]
