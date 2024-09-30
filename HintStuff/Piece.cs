@@ -19,6 +19,9 @@ public partial class Piece : Node2D
 
 	public void init(string path){
 		GetNode<Sprite2D>("PieceSprite").Texture = ResourceLoader.Load<Texture2D>(path);
+		RandomNumberGenerator rng = new RandomNumberGenerator();
+		Position = new Vector2(rng.RandfRange(200, 1720), rng.RandfRange(200, 880));
+		GD.Print(Position);
 	}
 
 	public override void _UnhandledInput(InputEvent @event){
