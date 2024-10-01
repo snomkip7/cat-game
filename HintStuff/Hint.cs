@@ -25,14 +25,18 @@ public partial class Hint : Node2D
 		for(int i=0;i<cat.Length;i++){
 			Piece temp = piece.Instantiate<Piece>();
 			temp.init("icon.svg"); // needs to be updated to show sprite
-			GD.Print("initiated a piece");
+			//GD.Print("initiated a piece");
 			AddChild(temp);
 		}
 		for(int i=0;i<thing.Length;i++){
 			Piece temp = piece.Instantiate<Piece>();
 			temp.init("icon.svg"); // needs to be updated to show sprite
-			GD.Print("initiated a piece");
+			//GD.Print("initiated a piece");
 			AddChild(temp);
 		}
+	}
+
+	public void returnToMap(){
+		GetTree().ChangeSceneToFile(global.area+".tscn");
 	}
 }

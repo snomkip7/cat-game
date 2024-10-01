@@ -6,12 +6,14 @@ public class Cat{
     public bool found = false;
     public int locationNum;
     public int hintNum;
+    public int index;
 
-    public Cat(string type, string like, int location, int hint){
+    public Cat(string type, string like, int location, int hint, int index){
         this.type = type;
         this.like = like;
         locationNum = location;
         hintNum = hint;
+        this.index = index;
     }
 
     public override string ToString(){

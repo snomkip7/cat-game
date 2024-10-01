@@ -5,3 +5,4 @@
 [node name="Heart" type="Node2D"]
 
 [node name="Piece1" parent="." instance=ExtResource("1_gbl17")]
+modulate = Color(1, 0.701961, 0.992157, 1)

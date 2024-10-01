@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5jadrt75lbcr"]
+
+[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_crxqk"]
+[ext_resource type="Script" path="res://Petting/Petting.cs" id="1_kodb5"]
+
+[node name="Petting" type="Node2D"]
+script = ExtResource("1_kodb5")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+rotation = 3.14159
+scale = Vector2(15, 8.4375)
+texture = ExtResource("1_crxqk")
+
+[node name="Timer" type="Label" parent="."]
+offset_left = 895.0
+offset_top = 21.0
+offset_right = 1095.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0.0588235, 0.0196078, 0.478431, 1)
+theme_override_colors/font_shadow_color = Color(0.12549, 0.137255, 0.301961, 1)
+theme_override_font_sizes/font_size = 65
+text = "5:00"
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="."]
+offset_left = 817.0
+offset_top = 900.0
+offset_right = 1103.0
+offset_bottom = 963.0
+theme_override_colors/font_color = Color(0.643137, 0.298039, 0.435294, 1)
+theme_override_colors/font_outline_color = Color(0, 0.313726, 0.32549, 1)
+theme_override_colors/icon_normal_color = Color(0.733333, 0.760784, 0.921569, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Return to map"
+icon_alignment = 1
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(545, 503)
+scale = Vector2(5.21875, 5.21875)
+texture = ExtResource("1_crxqk")
+
+[node name="Bongo" type="Button" parent="."]
+offset_left = 1150.0
+offset_top = 200.0
+offset_right = 1350.0
+offset_bottom = 400.0
+icon = ExtResource("1_crxqk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BellyRubs" type="Button" parent="."]
+offset_left = 1450.0
+offset_top = 200.0
+offset_right = 1650.0
+offset_bottom = 400.0
+icon = ExtResource("1_crxqk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boop" type="Button" parent="."]
+offset_left = 1150.0
+offset_top = 450.0
+offset_right = 1350.0
+offset_bottom = 650.0
+icon = ExtResource("1_crxqk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="StringToy" type="Button" parent="."]
+offset_left = 1450.0
+offset_top = 450.0
+offset_right = 1650.0
+offset_bottom = 650.0
+icon = ExtResource("1_crxqk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Holding" type="Button" parent="."]
+offset_left = 1150.0
+offset_top = 700.0
+offset_right = 1350.0
+offset_bottom = 900.0
+icon = ExtResource("1_crxqk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="MouseToy" type="Button" parent="."]
+offset_left = 1450.0
+offset_top = 700.0
+offset_right = 1650.0
+offset_bottom = 900.0
+icon = ExtResource("1_crxqk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="ReturnButton" to="." method="returnToMap"]
+[connection signal="pressed" from="Bongo" to="." method="useBongo"]
+[connection signal="pressed" from="BellyRubs" to="." method="useBellyrubs"]
+[connection signal="pressed" from="Boop" to="." method="useBoop"]
+[connection signal="pressed" from="StringToy" to="." method="useStringToy"]
+[connection signal="pressed" from="Holding" to="." method="useHolding"]
+[connection signal="pressed" from="MouseToy" to="." method="useMouseToy"]
