@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://blvmc61calke4"]
+
+[ext_resource type="Texture2D" uid="uid://clcr7c4mgu3x0" path="res://Assets/background1.png" id="1_3ohe0"]
+[ext_resource type="Script" path="res://End.cs" id="1_6dlgf"]
+[ext_resource type="FontFile" uid="uid://b6h3xaa3ajasg" path="res://Assets/Tiny5-Regular.ttf" id="2_ynq0l"]
+[ext_resource type="Texture2D" uid="uid://81d5npsypjb1" path="res://Assets/itembg.png" id="4_gnyox"]
+
+[node name="End" type="Node2D"]
+script = ExtResource("1_6dlgf")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(2, 2)
+texture = ExtResource("1_3ohe0")
+
+[node name="Lose" type="Label" parent="."]
+offset_left = 134.0
+offset_top = 194.0
+offset_right = 1793.0
+offset_bottom = 886.0
+theme_override_colors/font_color = Color(0.670588, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("2_ynq0l")
+theme_override_font_sizes/font_size = 250
+text = "YOU LOSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Win" type="Label" parent="."]
+visible = false
+offset_left = 134.0
+offset_top = 194.0
+offset_right = 1796.0
+offset_bottom = 886.0
+theme_override_colors/font_color = Color(0, 0.45098, 0.192157, 1)
+theme_override_fonts/font = ExtResource("2_ynq0l")
+theme_override_font_sizes/font_size = 250
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttin" type="Button" parent="."]
+offset_left = 870.0
+offset_top = 877.0
+offset_right = 1070.0
+offset_bottom = 1077.0
+icon = ExtResource("4_gnyox")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Buttin"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 165.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("2_ynq0l")
+theme_override_font_sizes/font_size = 40
+text = "RETRY
+THE
+GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttin" to="." method="restart"]

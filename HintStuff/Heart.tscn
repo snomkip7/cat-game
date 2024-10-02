@@ -1,8 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://8dcfarvbdiwk"]
+[gd_scene load_steps=5 format=3 uid="uid://8dcfarvbdiwk"]
 
-[ext_resource type="PackedScene" uid="uid://xfoft6j5e5y5" path="res://HintStuff/Piece.tscn" id="1_gbl17"]
+[ext_resource type="Script" path="res://HintStuff/Piece.cs" id="1_s27pm"]
+[ext_resource type="Texture2D" uid="uid://c87bupkax4amp" path="res://Assets/pieceSprite.png" id="2_hslr8"]
+[ext_resource type="FontFile" uid="uid://b6h3xaa3ajasg" path="res://Assets/Tiny5-Regular.ttf" id="3_3remy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg34b"]
+size = Vector2(64, 64)
 
 [node name="Heart" type="Node2D"]
+script = ExtResource("1_s27pm")
 
-[node name="Piece1" parent="." instance=ExtResource("1_gbl17")]
-modulate = Color(1, 0.701961, 0.992157, 1)
+[node name="PieceArea" type="Area2D" parent="."]
+
+[node name="PieceCollision" type="CollisionShape2D" parent="PieceArea"]
+shape = SubResource("RectangleShape2D_pg34b")
+
+[node name="PieceSprite" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 0.831373, 0.929412, 1)
+texture = ExtResource("2_hslr8")
+
+[node name="Text" type="Label" parent="."]
+offset_left = -29.0
+offset_top = -32.0
+offset_right = 35.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.0392157, 0.0705882, 0.0784314, 1)
+theme_override_fonts/font = ExtResource("3_3remy")
+theme_override_font_sizes/font_size = 55
+text = "<3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="input_event" from="PieceArea" to="." method="inputEvent"]

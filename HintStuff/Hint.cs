@@ -24,16 +24,20 @@ public partial class Hint : Node2D
 	public void init(string cat, string thing){
 		for(int i=0;i<cat.Length;i++){
 			Piece temp = piece.Instantiate<Piece>();
-			temp.init("icon.svg"); // needs to be updated to show sprite
+			temp.init(cat.Substring(i,1).ToUpper(), true); 
 			//GD.Print("initiated a piece");
 			AddChild(temp);
 		}
 		for(int i=0;i<thing.Length;i++){
 			Piece temp = piece.Instantiate<Piece>();
-			temp.init("icon.svg"); // needs to be updated to show sprite
+			temp.init(thing.Substring(i,1).ToUpper(), false);
 			//GD.Print("initiated a piece");
 			AddChild(temp);
 		}
+		PackedScene heartScene = ResourceLoader.Load<PackedScene>("HintStuff/Heart.tscn");
+		Piece heart = heartScene.Instantiate<Piece>();
+		heart.init("<3", false);
+		AddChild(heart);
 	}
 
 	public void returnToMap(){

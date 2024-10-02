@@ -17,11 +17,14 @@ public partial class Piece : Node2D
 		}
 	}
 
-	public void init(string path){
-		GetNode<Sprite2D>("PieceSprite").Texture = ResourceLoader.Load<Texture2D>(path);
+	public void init(string text, bool cat){
+		GetNode<Label>("Text").Text = text;
 		RandomNumberGenerator rng = new RandomNumberGenerator();
 		Position = new Vector2(rng.RandfRange(200, 1720), rng.RandfRange(200, 880));
 		GD.Print(Position);
+		if(cat){
+			GetNode<Sprite2D>("PieceSprite").Modulate = Color.Color8(255, 220, 120);
+		}
 	}
 
 	public override void _UnhandledInput(InputEvent @event){

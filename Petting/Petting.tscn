@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5jadrt75lbcr"]
+[gd_scene load_steps=6 format=3 uid="uid://b5jadrt75lbcr"]
 
-[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_crxqk"]
 [ext_resource type="Script" path="res://Petting/Petting.cs" id="1_kodb5"]
+[ext_resource type="Texture2D" uid="uid://clcr7c4mgu3x0" path="res://Assets/background1.png" id="2_er67f"]
+[ext_resource type="Texture2D" uid="uid://81d5npsypjb1" path="res://Assets/itembg.png" id="4_wg4hk"]
+[ext_resource type="FontFile" uid="uid://b6h3xaa3ajasg" path="res://Assets/Tiny5-Regular.ttf" id="5_ucn2e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xibsw"]
+font_size = 93
+font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="Petting" type="Node2D"]
 script = ExtResource("1_kodb5")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-rotation = 3.14159
-scale = Vector2(15, 8.4375)
-texture = ExtResource("1_crxqk")
+scale = Vector2(2, 2)
+texture = ExtResource("2_er67f")
 
 [node name="Timer" type="Label" parent="."]
 offset_left = 895.0
@@ -36,70 +41,165 @@ theme_override_font_sizes/font_size = 40
 text = "Return to map"
 icon_alignment = 1
 
-[node name="Cat" type="Sprite2D" parent="."]
-position = Vector2(545, 503)
-scale = Vector2(5.21875, 5.21875)
-texture = ExtResource("1_crxqk")
-
 [node name="Bongo" type="Button" parent="."]
 offset_left = 1150.0
-offset_top = 200.0
+offset_top = 191.0
 offset_right = 1350.0
-offset_bottom = 400.0
-icon = ExtResource("1_crxqk")
+offset_bottom = 391.0
+icon = ExtResource("4_wg4hk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Label" type="Label" parent="Bongo"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 165.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("5_ucn2e")
+theme_override_font_sizes/font_size = 40
+text = "BONGO
+THE
+CAT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BellyRubs" type="Button" parent="."]
 offset_left = 1450.0
-offset_top = 200.0
+offset_top = 191.0
 offset_right = 1650.0
-offset_bottom = 400.0
-icon = ExtResource("1_crxqk")
+offset_bottom = 391.0
+icon = ExtResource("4_wg4hk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Label" type="Label" parent="BellyRubs"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 165.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("5_ucn2e")
+theme_override_font_sizes/font_size = 40
+text = "BELLY 
+RUBS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Boop" type="Button" parent="."]
 offset_left = 1150.0
-offset_top = 450.0
+offset_top = 441.0
 offset_right = 1350.0
-offset_bottom = 650.0
-icon = ExtResource("1_crxqk")
+offset_bottom = 641.0
+icon = ExtResource("4_wg4hk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Label" type="Label" parent="Boop"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 165.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("5_ucn2e")
+theme_override_font_sizes/font_size = 40
+text = "BOOP
+THE
+SNOOT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StringToy" type="Button" parent="."]
 offset_left = 1450.0
-offset_top = 450.0
+offset_top = 441.0
 offset_right = 1650.0
-offset_bottom = 650.0
-icon = ExtResource("1_crxqk")
+offset_bottom = 641.0
+icon = ExtResource("4_wg4hk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Label" type="Label" parent="StringToy"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 165.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("5_ucn2e")
+theme_override_font_sizes/font_size = 40
+text = "STRING
+TOY"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Holding" type="Button" parent="."]
 offset_left = 1150.0
-offset_top = 700.0
+offset_top = 691.0
 offset_right = 1350.0
-offset_bottom = 900.0
-icon = ExtResource("1_crxqk")
+offset_bottom = 891.0
+icon = ExtResource("4_wg4hk")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Label" type="Label" parent="Holding"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 165.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("5_ucn2e")
+theme_override_font_sizes/font_size = 40
+text = "HOLD
+THE
+CAT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MouseToy" type="Button" parent="."]
 offset_left = 1450.0
-offset_top = 700.0
+offset_top = 691.0
 offset_right = 1650.0
-offset_bottom = 900.0
-icon = ExtResource("1_crxqk")
+offset_bottom = 891.0
+icon = ExtResource("4_wg4hk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Label" type="Label" parent="MouseToy"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 165.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0.0823529, 0.192157, 1)
+theme_override_fonts/font = ExtResource("5_ucn2e")
+theme_override_font_sizes/font_size = 40
+text = "MOUSE
+TOY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CatLabel" type="Label" parent="."]
+offset_left = 847.0
+offset_top = 262.0
+offset_right = 1336.0
+offset_bottom = 813.0
+scale = Vector2(-1, 1)
+theme_override_font_sizes/font_size = 18
+text = "     ／l、
+（ﾟ､ ｡７
+     l、ﾞ~ヽ
+     じしf_, )ノ"
+label_settings = SubResource("LabelSettings_xibsw")
 
 [connection signal="pressed" from="ReturnButton" to="." method="returnToMap"]
 [connection signal="pressed" from="Bongo" to="." method="useBongo"]

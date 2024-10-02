@@ -13,7 +13,7 @@ public partial class Item : StaticBody2D
 	}
 
 	public void init(int pos, string color, string name){
-		List<Vector2> posList = new List<Vector2>() {new Vector2(640,640)};
+		List<Vector2> posList = new List<Vector2>() {new Vector2(672,608), new Vector2(1312, 480), new Vector2(992, 288), new Vector2(480, 480), new Vector2(1632, 736), new Vector2(864, 672), new Vector2(544, 608), new Vector2(544, 800), new Vector2(736, 288), new Vector2(1696, 288)};
 		Position = posList[pos];
 		catColor = color;
 		itemName = name;

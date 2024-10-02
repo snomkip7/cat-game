@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public partial class Global : Node
 {
-	public Vector2 playerPosition = new Vector2(928, 864);
+	public Vector2 playerPosition;
 	public string area = "Entrance";
 	public int numCats = 5;
 	public float timer; // in seconds (300), now 180
@@ -17,7 +17,7 @@ public partial class Global : Node
 	/*
 	public Dictionary<string, bool> catsFound = new Dictionary<string, bool>();
 	public Dictionary<string, string> catLikes = new Dictionary<string, string>(); */
-	public List<Cat> cats = new List<Cat>();
+	public List<Cat> cats;
 	public override void _Ready()
 	{
 	}
@@ -27,18 +27,22 @@ public partial class Global : Node
         if(playing){
 			timer -= (float) delta;
 			if(timer <= 0){
-				//game over
+				GetTree().ChangeSceneToFile("End.tscn");
 				GD.Print("game ova");
+			}
+			if(catsLeft == 0){
+			GetTree().ChangeSceneToFile("End.tscn");
 			}
 		}
     }
 
     public void startGame(){
+		cats = new List<Cat>();
 		// info to get from
-		List<string> catColors = new List<string>() {"orange", "black", "tortoise", "void", "gray"};
+		List<string> catColors = new List<string>() {"orange", "tuxedo", "tortie", "void", "gray"};
 		List<string> likes = new List<string>() {"boop", "bellyrubs", "bongo", "stringtoy", "holding", "mousetoy"};
-		List<int> locations = new List<int>() {1,2,3,4,5,6,7,8,9,10};
-		List<int> hints = new List<int>() {1,2,3,4,5,6,7,8,9,10};
+		List<int> locations = new List<int>() {0, 1,2,3,4,5,6,7,8,9};
+		List<int> hints = new List<int>() {0, 1,2,3,4,5,6,7,8,9};
 
 		// generating the things
 		RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -55,7 +59,8 @@ public partial class Global : Node
 		}
 		catsLeft = numCats;
 		playing = true;
-		timer = 180f;
+		timer = 240f;
+		playerPosition = new Vector2(928, 864);
 		GetTree().ChangeSceneToFile("Entrance.tscn");
 	}
 

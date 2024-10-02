@@ -69,3 +69,7 @@ click={
 2d_physics/layer_2="walls"
 2d_physics/layer_3="objects"
 2d_physics/layer_4="pickupables"
+
+[rendering]
+
+environment/subsurface_scattering/subsurface_scattering_quality=0

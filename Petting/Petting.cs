@@ -12,7 +12,6 @@ public partial class Petting : Node2D
 		timer = GetNode<Label>("Timer");
 		global = GetNode<Global>("/root/Global");
 		global.setPet(this);
-		GetNode<Sprite2D>("Cat").Texture = ResourceLoader.Load<Texture2D>("icon.svg"); // ** EDIT this **
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,7 +41,7 @@ public partial class Petting : Node2D
 			//angry noise
 			// lose l bozo gg get wrecked
 			global.playing = false;
-			GetTree().ChangeSceneToFile("StartMenu.tscn");
+			GetTree().ChangeSceneToFile("End.tscn");
 		}
 	}
 
@@ -52,7 +51,7 @@ public partial class Petting : Node2D
 	public void useBoop(){
 		useItem("boop");
 	}
-	public void useBellyRubs(){
+	public void useBellyrubs(){
 		useItem("bellyrubs");
 	}
 	public void useStringToy(){

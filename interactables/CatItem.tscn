@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnrc7tgdx6o8a"]
 
 [ext_resource type="Script" path="res://interactables/CatItem.cs" id="1_2i18j"]
-[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_5dv2u"]
+[ext_resource type="Texture2D" uid="uid://dduusunhsp7us" path="res://Assets/orangeCat.png" id="2_71lap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gf5wk"]
 size = Vector2(64, 64)
@@ -15,8 +15,6 @@ script = ExtResource("1_2i18j")
 shape = SubResource("RectangleShape2D_gf5wk")
 
 [node name="CatSprite" type="Sprite2D" parent="."]
-rotation = 3.14159
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_5dv2u")
+texture = ExtResource("2_71lap")
 
 [connection signal="input_event" from="." to="." method="inputEvent"]

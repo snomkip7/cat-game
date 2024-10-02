@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://f88wmwydq8o8"]
+[gd_scene load_steps=3 format=3 uid="uid://f88wmwydq8o8"]
 
 [ext_resource type="Script" path="res://HintStuff/Hint.cs" id="1_i0tvy"]
-[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_rhmcw"]
-[ext_resource type="PackedScene" uid="uid://8dcfarvbdiwk" path="res://HintStuff/Heart.tscn" id="2_iydyo"]
+[ext_resource type="Texture2D" uid="uid://clcr7c4mgu3x0" path="res://Assets/background1.png" id="2_payju"]
 
 [node name="Hint" type="Node2D"]
 script = ExtResource("1_i0tvy")
@@ -10,10 +9,8 @@ script = ExtResource("1_i0tvy")
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 rotation = 3.14159
-scale = Vector2(15, 8.4375)
-texture = ExtResource("1_rhmcw")
-
-[node name="Heart" parent="." instance=ExtResource("2_iydyo")]
+scale = Vector2(2, 2)
+texture = ExtResource("2_payju")
 
 [node name="Timer" type="Label" parent="."]
 offset_left = 895.0

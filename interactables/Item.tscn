@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c756i7efpam5v"]
 
 [ext_resource type="Script" path="res://interactables/Item.cs" id="1_5xkgq"]
-[ext_resource type="Texture2D" uid="uid://ccvcciy2t3fkk" path="res://icon.svg" id="1_ivmto"]
+[ext_resource type="Texture2D" uid="uid://cel7upr6ut0a0" path="res://Assets/item.png" id="2_cncic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4kdr"]
 size = Vector2(64, 64)
@@ -15,7 +15,6 @@ script = ExtResource("1_5xkgq")
 shape = SubResource("RectangleShape2D_s4kdr")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ivmto")
+texture = ExtResource("2_cncic")
 
 [connection signal="input_event" from="." to="." method="inputEvent"]
